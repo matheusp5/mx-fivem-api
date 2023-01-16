@@ -23,6 +23,10 @@ app.use(bp.urlencoded({
 app.use(bp.json())
 app.use(cors())
 
+// ---------------------------------------------------
+// ------------------- SCREENSHOT --------------------
+// ---------------------------------------------------
+
 app.post("/request/img", (req, res) => {
     let id = req.body.id;
     let src = vRP.getUserSource(parseInt(id));
@@ -37,6 +41,10 @@ app.post("/request/img", (req, res) => {
     }
 })
 
+// ---------------------------------------------------
+// ------------------- PLAYERS ON --------------------
+// ---------------------------------------------------
+
 app.post("/request/players", (req, res) => {
     let users = []
     let players = vRP.getUsers();
@@ -48,6 +56,11 @@ app.post("/request/players", (req, res) => {
     }
     res.send(users)
 })
+
+
+// ---------------------------------------------------
+// ------------------- GIVE BAN ----------------------
+// ---------------------------------------------------
 
 app.post("/request/ban", (req, res) => {
     let id = parseInt(req.body.id)
@@ -67,6 +80,11 @@ app.post("/request/ban", (req, res) => {
     
 })
 
+
+// ---------------------------------------------------
+// ------------------- GIVE KICK ---------------------
+// ---------------------------------------------------
+
 app.post("/request/kick", (req, res) => {
     let id = parseInt(req.body.id)
     let reason = req.body.reason;
@@ -83,6 +101,11 @@ app.post("/request/kick", (req, res) => {
     }
     
 })
+
+// ---------------------------------------------------
+// ------------------- GIVE MONEY --------------------
+// ---------------------------------------------------
+
 app.post("/give/money", (req, res) => {
     let amount = parseInt(req.body.amount);
     let id = parseInt(req.body.id)
@@ -97,6 +120,10 @@ app.post("/give/money", (req, res) => {
         })
     }
 })
+
+// ---------------------------------------------------
+// ------------------- REVIVER -----------------------
+// ---------------------------------------------------
 
 app.post("/give/god", (req, res) => {
 
@@ -118,6 +145,11 @@ app.post("/give/god", (req, res) => {
 
 
 })
+
+
+// ---------------------------------------------------
+// ------------------- GIVE CAR ----------------------
+// ---------------------------------------------------
 
 app.post("/give/car", (req, res) => {
     let id = parseInt(req.body.id)
@@ -143,6 +175,11 @@ app.post("/give/car", (req, res) => {
         }
     }
 })
+
+
+// ---------------------------------------------------
+// ------------------- REMOVE CAR --------------------
+// ---------------------------------------------------
 
 app.post("/remove/car", (req, res) => {
     let id = parseInt(req.body.id)
@@ -173,6 +210,11 @@ app.post("/remove/car", (req, res) => {
     }
 })
 
+
+// ---------------------------------------------------
+// ------------------- DISCORD -----------------------
+// ---------------------------------------------------
+
 //app.post("/request/server/ban", (req, res) => {
     
 //})
@@ -182,6 +224,11 @@ app.post("/remove/car", (req, res) => {
 //app.post("/request/server/message", (req, res) => {
     
 //})
+
+
+// ---------------------------------------------------
+// --------------------- GET IP ----------------------
+// ---------------------------------------------------
 
 app.post("/request/ip", (req, res) => {
 
@@ -213,6 +260,11 @@ app.post("/request/ip", (req, res) => {
         })
     }
 })
+
+
+// ---------------------------------------------------
+// -------------- SCREENSHOT AND HOST ----------------
+// ---------------------------------------------------
 
 app.post("/request/img2", (req, res) => {
     let id = req.body.id;
@@ -249,6 +301,7 @@ app.post("/request/img2", (req, res) => {
     }
 })
 
+// Start application on port 3500 (you can change the port)
 app.listen(3500, () => {
     console.log("Servidor aberto e operando na porta 3500")
 })
