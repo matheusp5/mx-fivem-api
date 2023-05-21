@@ -4,7 +4,7 @@ const vRP = VrpProxy.getInterface('vRP');
 const vRPClient = VrpTunnel.getInterface('vRP');
 
 const main = require("./main.json")
-const apikey = "7970f3800e0e32db8d469457f9e1b9b9"
+const apikey = ""
 
 const fs = require("fs")
 const imgbb = require("imgbb-uploader");
